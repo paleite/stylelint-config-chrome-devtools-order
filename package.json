@@ -1,0 +1,8 @@
+{
+  "name": "stylelint-config-chrome-devtools-order",
+  "version": "0.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/paleite/stylelint-config-chrome-devtools-order.git",
+  "author": "Patrick Eriksson <paleite@users.noreply.github.com> (https://github.com/paleite)",
+  "license": "MIT"
+}
