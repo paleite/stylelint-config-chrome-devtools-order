@@ -1,8 +1,62 @@
 {
   "name": "stylelint-config-chrome-devtools-order",
   "version": "0.0.1",
-  "main": "index.js",
-  "repository": "https://github.com/paleite/stylelint-config-chrome-devtools-order.git",
+  "description": "Stylelint config to sort property declarations in the same way as Chrome Devtool's categories",
+  "keywords": [
+    "stylelint",
+    "stylelint-order",
+    "stylelint-plugin",
+    "chrome-devtools"
+  ],
+  "homepage": "https://github.com/paleite/stylelint-config-chrome-devtools-order",
+  "bugs": {
+    "url": "https://github.com/paleite/stylelint-config-chrome-devtools-order/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paleite/stylelint-config-chrome-devtools-order.git"
+  },
+  "license": "MIT",
   "author": "Patrick Eriksson <paleite@users.noreply.github.com> (https://github.com/paleite)",
-  "license": "MIT"
+  "main": "dist/index.js",
+  "files": [
+    "dist/config/config-creator.js",
+    "dist/config/extended-stylelint-order-config.js",
+    "dist/index.js",
+    "dist/lib/chrome-devtools-order.json",
+    "dist/plugin/index.js"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write .",
+    "lint": "eslint --cache --ext .js,.ts --format codeframe .",
+    "release": "np",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@tsconfig/node12": "^1.0.7",
+    "@types/node": "^14.14.7",
+    "@types/stylelint": "^9.10.1",
+    "@typescript-eslint/eslint-plugin": "^4.7.0",
+    "@typescript-eslint/parser": "^4.7.0",
+    "chrome-devtools-frontend": "^1.0.827632",
+    "eslint": "^7.13.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-promise": "^4.2.1",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.5.1",
+    "np": "^7.0.0",
+    "postcss": "^7.0.35",
+    "prettier": "^2.1.2",
+    "typescript": "^4.0.5"
+  },
+  "peerDependencies": {
+    "stylelint": "^13.7.2",
+    "stylelint-order": "^4.1.0"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  }
 }
