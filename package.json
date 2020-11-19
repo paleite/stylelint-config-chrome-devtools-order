@@ -1,6 +1,6 @@
 {
   "name": "stylelint-config-chrome-devtools-order",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Stylelint config to sort property declarations in the same way as Chrome Devtool's categories",
   "keywords": [
     "stylelint",
