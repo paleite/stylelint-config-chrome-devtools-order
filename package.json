@@ -39,7 +39,7 @@
     "publish-canary": "np prerelease --tag=canary",
     "publish-stable": "np",
     "start": "node dist",
-    "test": "jest --coverage",
+    "test": "jest --coverage --passWithNoTests",
     "typecheck": "tsc --project tsconfig.json"
   },
   "devDependencies": {
