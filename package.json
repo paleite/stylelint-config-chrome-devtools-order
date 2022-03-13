@@ -34,8 +34,6 @@
     "postinstall": "yarn generate && yarn build",
     "lint": "eslint --cache --ext .js,.ts,.tsx --fix .",
     "prepare": "husky install",
-    "prepublishOnly": "pinst --disable",
-    "postpublish": "pinst --enable",
     "publish-canary": "np prerelease --tag=canary",
     "publish-stable": "np",
     "start": "node dist",
