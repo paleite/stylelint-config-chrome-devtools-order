@@ -6,5 +6,5 @@
     "rootDir": "."
   },
   "include": ["."],
-  "exclude": ["dist"]
+  "exclude": ["dist", "src/lib/*.ts"]
 }

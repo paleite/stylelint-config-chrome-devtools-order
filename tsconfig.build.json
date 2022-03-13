@@ -9,5 +9,5 @@
     "types": ["node"]
   },
   "include": ["src", "src/**/*.json"],
-  "exclude": ["**/*.test.ts", "dist"]
+  "exclude": ["**/*.test.ts", "dist", "src/lib/*.ts"]
 }
