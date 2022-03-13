@@ -1,16 +1,12 @@
-import type { Result, Root } from "postcss";
-import type { Plugin, RuleTesterContext } from "stylelint";
 import stylelint from "stylelint";
 import propertiesOrderRule from "stylelint-order/rules/properties-order";
 import configCreator from "../config/config-creator";
 
 const ruleName = "plugin/chrome-devtools-order";
-const plugin: Plugin = ((
-    enabled: boolean,
-    options: Record<string, boolean>,
-    context: RuleTesterContext
-  ) =>
-  (root: Root, result: Result) => {
+
+const plugin = stylelint.createPlugin(
+  ruleName,
+  (enabled: boolean, options, context) => (root, result) => {
     if (!enabled) {
       return;
     }
@@ -30,6 +26,7 @@ const plugin: Plugin = ((
         },
       }
     );
+
     if (!validOptions) {
       throw TypeError(
         `The options received for ${ruleName} are invalid: ${JSON.stringify(
@@ -40,8 +37,8 @@ const plugin: Plugin = ((
 
     const expectation = configCreator(options);
     propertiesOrderRule(expectation, undefined, context)(root, result);
-  }) as Plugin;
-
-export default stylelint.createPlugin(ruleName, plugin);
+  }
+);
 
 export { ruleName };
+export default plugin;

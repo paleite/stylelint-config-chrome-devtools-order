@@ -31,28 +31,18 @@ const chromeDevToolsOrder = keys.reduce<ChromeDevToolsOrder[]>(
   []
 );
 
-const output = chromeDevToolsOrder
-  .map(({ category, properties }) => {
-    const lines = [`/** ${category} */`, ...properties];
-    return lines.join("\n");
-  })
-  .join("\n\n");
-
 function toStylelintOrder(order: ChromeDevToolsOrder[]): [string, string[]][] {
   return order.map<[string, string[]]>(({ category, properties }) => {
-    console.log([category, properties]);
     return [category, properties];
   });
 }
 const stylelintOrder = toStylelintOrder(chromeDevToolsOrder);
 
-console.log(output);
-console.log(JSON.stringify(stylelintOrder));
 writeFileSync(
   join(__dirname, "../src/lib/chrome-devtools-order.json"),
   JSON.stringify(stylelintOrder),
   { encoding: "utf-8" }
 );
 console.log(
-  "\n[SUCCESS] `src/lib/chrome-devtools-order.json` has been written. ✨"
+  "[SUCCESS] `src/lib/chrome-devtools-order.json` has been written. ✨"
 );
