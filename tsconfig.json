@@ -1,13 +1,10 @@
 {
-  "extends": "@tsconfig/node12/tsconfig.json",
+  "extends": "./tsconfig.build.json",
   "compilerOptions": {
-    "allowJs": true,
-    "checkJs": false,
-    "outDir": "./dist",
-    "resolveJsonModule": true,
-    "rootDir": "./src",
-    "types": ["node"]
+    "composite": false,
+    "noEmit": true,
+    "rootDir": "."
   },
-  "include": ["src"],
-  "exclude": ["**/*.js", "dist", "node_modules"]
+  "include": ["."],
+  "exclude": ["dist"]
 }

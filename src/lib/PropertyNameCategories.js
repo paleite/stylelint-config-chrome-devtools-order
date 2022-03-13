@@ -193,9 +193,9 @@ for (const [category, styleNames] of CategorizedProperties) {
     if (!CategoriesByPropertyName.has(styleName)) {
       CategoriesByPropertyName.set(styleName, []);
     }
-    const categories = /** @type Array<Category> */ (CategoriesByPropertyName.get(
-      styleName
-    ));
+    const categories = /** @type Array<Category> */ (
+      CategoriesByPropertyName.get(styleName)
+    );
     categories.push(category);
   }
 }
@@ -206,9 +206,9 @@ for (const [category, styleNames] of CategorizedProperties) {
  */
 const matchCategoriesByPropertyName = (propertyName) => {
   if (CategoriesByPropertyName.has(propertyName)) {
-    return /** @type {!Array<!Category>} */ (CategoriesByPropertyName.get(
-      propertyName
-    ));
+    return /** @type {!Array<!Category>} */ (
+      CategoriesByPropertyName.get(propertyName)
+    );
   }
 
   // dynamic rules can be appended here

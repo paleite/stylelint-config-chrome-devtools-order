@@ -1,2 +1,3 @@
-/dist/
 /src/lib/chrome-devtools-order.json
+coverage/
+dist/
