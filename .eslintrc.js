@@ -1,11 +1,10 @@
 const path = require("path");
 
-const typescriptProjects = [
-  "./tsconfig.json",
-  "./tsconfig.eslint.json",
-].map((p) => path.resolve(__dirname, p));
+const typescriptProjects = ["./tsconfig.json", "./tsconfig.eslint.json"].map(
+  (p) => path.resolve(__dirname, p)
+);
 
-/** @type import("eslint").Linter.Config<import("eslint").Linter.RulesRecord> */
+/** @type import("eslint").Linter.Config */
 const config = {
   root: true,
   reportUnusedDisableDirectives: true,
@@ -60,7 +59,7 @@ const config = {
   },
 };
 
-/** @type import("eslint").Linter.ConfigOverride<import("eslint").Linter.RulesRecord>[] */
+/** @type import("eslint").Linter.ConfigOverride[] */
 const overrides = [
   {
     /**
