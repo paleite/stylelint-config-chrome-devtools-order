@@ -5,10 +5,10 @@ export default ({
 } = {}): {
   emptyLineBefore: string;
   properties: string | string[];
-  categoryName: string | string[];
+  groupName: string | string[];
 }[] =>
-  chromeDevtoolsOrder.map(([categoryName, properties]) => ({
+  chromeDevtoolsOrder.map(([groupName, properties]) => ({
     emptyLineBefore: emptyLineBetweenCategories ? "always" : "never",
     properties,
-    categoryName,
+    groupName,
   }));

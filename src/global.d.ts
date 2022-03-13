@@ -19,11 +19,7 @@ declare module "stylelint-order/rules/properties-order" {
     primaryOptionArray: boolean;
     ruleName: string;
     messages: {
-      expected: (
-        first: unknown,
-        second: unknown,
-        categoryName: unknown
-      ) => string;
+      expected: (first: unknown, second: unknown, groupName: unknown) => string;
       expectedEmptyLineBefore: (property: unknown) => string;
       rejectedEmptyLineBefore: (property: unknown) => string;
     };
