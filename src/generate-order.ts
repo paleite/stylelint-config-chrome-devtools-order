@@ -1,3 +1,4 @@
+// Run: `yarn generate`
 import { writeFileSync } from "fs";
 import { join } from "path";
 import { CategorizedProperties } from "./lib/PropertyNameCategories.edit";
@@ -5,10 +6,7 @@ import { generatedProperties } from "./lib/SupportedCSSProperties";
 // import {} from "chrome-devtools-frontend/front_end/elements/PropertyNameCategories";
 // import { generatedProperties } from "chrome-devtools-frontend/front_end/generated/SupportedCSSProperties";
 
-type ChromeDevToolsOrder = {
-  category: string;
-  properties: string[];
-};
+type ChromeDevToolsOrder = { category: string; properties: string[] };
 
 const expandPropertyNames = (name: string): string[] => {
   const longhands =
@@ -23,7 +21,10 @@ const keys = Array.from(CategorizedProperties.keys());
 const chromeDevToolsOrder = keys.reduce<ChromeDevToolsOrder[]>(
   (previousValue, category) => {
     const propertiesByCategory = CategorizedProperties.get(category) ?? [];
-    const properties = propertiesByCategory.map(expandPropertyNames).flat();
+    const properties = propertiesByCategory
+      .map(expandPropertyNames)
+      .flat()
+      .sort();
 
     return [...previousValue, { category, properties }];
   },
@@ -51,4 +52,7 @@ writeFileSync(
   join(__dirname, "../src/lib/chrome-devtools-order.json"),
   JSON.stringify(stylelintOrder),
   { encoding: "utf-8" }
+);
+console.log(
+  "\n[SUCCESS] `src/lib/chrome-devtools-order.json` has been written. ✨"
 );
